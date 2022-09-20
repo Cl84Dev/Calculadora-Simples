@@ -6,134 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Calculadora Simples</title>
-    
-    <style>
-        div {
-            background-color: black;
-            margin: auto;
-            width: 280px;
-            padding: 10px 10px 10px 10px;
-            border-radius: 5px;
-        }
-
-        table {
-            border: 2px solid black;
-            border-collapse: collapse;
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            user-select: none;
-        }
-
-        caption {
-            color: rgb(194, 193, 193);
-            font-size: .95em;
-            
-        }
-
-        td {
-            color: rgb(194, 193, 193);
-            border: 2px solid black;
-            background-color: rgb(46, 43, 43);
-        }
-
-        #visor {
-            overflow-x: auto;
-            background-color: rgb(138, 135, 135);
-            height: 80px;
-            max-width: 270px;
-            text-align: right;
-            color: black;
-            font-size: 1.5em;
-        }
-
-        .botaoPequeno {
-            height: 45px;
-            width: 70px;
-        }
-
-        .botaoPequeno:hover {
-            background-color: rgb(24, 22, 22);
-        }
-
-        .botaoGrande {
-            height: 45px;
-        }
-
-        .botaoGrande:hover {
-            background-color: rgb(70, 44, 44);
-        }
-
-        #operador:hover {
-            background-color: rgb(57, 63, 95);
-        }
-
-        #resultado:hover {
-            background-color: rgb(37, 59, 36);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div>
         <table>
             <caption>Calculadora Simples</caption>
             <tr>
-                <td id="visor" colspan="4" maxlength="10"></td>
+                <td id="visor" colspan="4"></td>
             </tr>
             <tr>
-                <td class="botaoGrande" colspan="2" onclick="limpar()">C</td>
-                <td class="botaoGrande" colspan="2" onclick="apagar()">></td>
+                <td class="botaoGrande" colspan="2" onclick="clearExpression()">C</td>
+                <td class="botaoGrande" colspan="2" onclick="backspace()">></td>
             </tr>
             <tr>
-                <td class="botaoPequeno" onclick="inserir('1')">1</td>
-                <td class="botaoPequeno" onclick="inserir('2')">2</td>
-                <td class="botaoPequeno" onclick="inserir('3')">3</td>
-                <td class="botaoPequeno" id="operador" onclick="inserir('+')">+</td>
+                <td class="botaoPequeno" onclick="inputNumber('1')">1</td>
+                <td class="botaoPequeno" onclick="inputNumber('2')">2</td>
+                <td class="botaoPequeno" onclick="inputNumber('3')">3</td>
+                <td class="botaoPequeno" id="operador" onclick="inputOperator('+')">+</td>
             </tr>
             <tr>
-                <td class="botaoPequeno" onclick="inserir('4')">4</td>
-                <td class="botaoPequeno" onclick="inserir('5')">5</td>
-                <td class="botaoPequeno" onclick="inserir('6')">6</td>
-                <td class="botaoPequeno" id="operador" onclick="inserir('-')">-</td>
+                <td class="botaoPequeno" onclick="inputNumber('4')">4</td>
+                <td class="botaoPequeno" onclick="inputNumber('5')">5</td>
+                <td class="botaoPequeno" onclick="inputNumber('6')">6</td>
+                <td class="botaoPequeno" id="operador" onclick="inputOperator('-')">-</td>
             </tr>
             <tr>
-                <td class="botaoPequeno" onclick="inserir('7')">7</td>
-                <td class="botaoPequeno" onclick="inserir('8')">8</td>
-                <td class="botaoPequeno" onclick="inserir('9')">9</td>
-                <td class="botaoPequeno" id="operador" onclick="inserir('*')">x</td>
+                <td class="botaoPequeno" onclick="inputNumber('7')">7</td>
+                <td class="botaoPequeno" onclick="inputNumber('8')">8</td>
+                <td class="botaoPequeno" onclick="inputNumber('9')">9</td>
+                <td class="botaoPequeno" id="operador" onclick="inputOperator('*')">x</td>
             </tr>
             <tr>
-                <td class="botaoPequeno" onclick="calcular()" id="resultado">=</td>
-                <td class="botaoPequeno" onclick="inserir('0')">0</td>
-                <td class="botaoPequeno" onclick="inserir('.')">.</td>
-                <td class="botaoPequeno" id="operador" onclick="inserir('/')">/</td>
+                <td class="botaoPequeno" onclick="calculate()" id="resultado">=</td>
+                <td class="botaoPequeno" onclick="inputNumber('0')">0</td>
+                <td class="botaoPequeno" onclick="inputNumber('.')">.</td>
+                <td class="botaoPequeno" id="operador" onclick="inputOperator('/')">/</td>
             </tr>
         </table>
     </div>
-
-    <script>
-
-        function inserir(num) {
-            let numero = document.getElementById('visor').innerHTML;
-            document.getElementById('visor').innerHTML = numero + num;
-        }
-
-        function limpar() {
-            document.getElementById('visor').innerHTML = ''
-        }
-
-        function apagar() {
-            let resultado = document.getElementById('visor').innerHTML;
-            document.getElementById('visor').innerHTML = resultado.substring(0, resultado.length -1)
-        }
-
-        function calcular() {
-            if (document.getElementById('visor').innerHTML != 0){
-            document.getElementById('visor').innerHTML = eval(document.getElementById('visor').innerHTML)
-            } else {
-                window.alert('Digite a sua expressão para obter resultado')
-            }
-        }
-    </script>
 </body>
 </html>
