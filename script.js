@@ -1,5 +1,5 @@
 let input = ''
-let screen = document.getElementById('visor')
+let screen = document.getElementById('screen')
 
 function inputNumber(key) {
     screen.innerHTML += key
@@ -52,8 +52,6 @@ function calculate() {
 }
 
 function screenWatcher() {
-    let screen = document.getElementById('visor')
-
     if (screen.innerHTML.length > 10) {
         alert('Esta calculadora não suporta valores acima de 10 dígitos')
         input = ''

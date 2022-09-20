@@ -1,63 +1,67 @@
-div {
-    background-color: black;
-    margin: auto;
-    width: 280px;
-    padding: 10px 10px 10px 10px;
-    border-radius: 5px;
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(11, 141, 248);
 }
 
-table {
-    border: 2px solid black;
-    border-collapse: collapse;
+header {
+    background-color: white;
     text-align: center;
-    font-size: 2em;
-    font-weight: bold;
-    user-select: none;
+    font-size: 25px;
 }
 
-caption {
-    color: rgb(194, 193, 193);
-    font-size: .95em;
-    
+#calculator {
+    margin: auto;
+    padding-top: 6px;
+    border-radius: 10px;
+    background-color: rgb(204, 204, 235);
+    width: 288px;
+    height: 400px;
 }
 
-td {
-    color: rgb(194, 193, 193);
-    border: 2px solid black;
-    background-color: rgb(46, 43, 43);
-}
-
-#visor {
-    overflow-x: auto;
-    background-color: rgb(138, 135, 135);
+#main-screen {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    background-color: rgb(167, 167, 187);
+    width: 275px;
     height: 80px;
-    max-width: 270px;
+}
+
+p {
+    margin: auto;
+    font-size: 40pt;
+    font-weight: bold;
     text-align: right;
-    color: black;
-    font-size: 1.5em;
 }
 
-.botaoPequeno {
-    height: 45px;
-    width: 70px;
+.keyboard {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(204, 204, 235);
+    width: 288px;
+    height: 72px;
 }
 
-.botaoPequeno:hover {
-    background-color: rgb(24, 22, 22);
+.large {
+    margin: 2px;
+    width: 134px;
 }
 
-.botaoGrande {
-    height: 45px;
+input {
+    background-color:  rgb(167, 167, 187);
+    margin: 2px;
+    border: none;
+    border-radius: 33.5px;
+    width: 67px;
+    height: 67px;
+    font-size: 30pt;
+    font-weight: bold;
 }
 
-.botaoGrande:hover {
-    background-color: rgb(70, 44, 44);
-}
-
-#operador:hover {
-    background-color: rgb(57, 63, 95);
-}
-
-#resultado:hover {
-    background-color: rgb(37, 59, 36);
+input:hover {
+    background-color: rgb(117, 117, 148);
 }
