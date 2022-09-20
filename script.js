@@ -9,8 +9,15 @@ function inputNumber(key) {
 }
 
 function inputOperator(key) { 
-    screen.innerHTML = ''
-    input += key
+    if (input[input.length - 1] === '+' || input[input.length - 1] === '-' || input[input.length - 1] === '*' || input[input.length - 1] === '/') {
+        input = input.substring(0, input.length -1)
+        input += key
+
+    } else {
+        screen.innerHTML = ''
+        input += key
+
+    }
 
 }
 
