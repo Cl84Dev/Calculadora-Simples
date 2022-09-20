@@ -19,21 +19,17 @@ header {
     height: 400px;
 }
 
-#main-screen {
+#screen {
+    display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 6px;
     border-radius: 10px;
     background-color: rgb(167, 167, 187);
-    width: 275px;
+    width: 265px;
     height: 80px;
-}
-
-p {
-    margin: auto;
-    font-size: 40pt;
-    font-weight: bold;
     text-align: right;
+    font-size: 30pt;
 }
 
 .keyboard {

@@ -2,7 +2,7 @@ let input = ''
 let screen = document.getElementById('screen')
 
 function inputNumber(key) {
-    screen.innerHTML += key
+    screen.value += key
     input += key
     screenWatcher()
     
@@ -14,7 +14,7 @@ function inputOperator(key) {
         input += key
 
     } else {
-        screen.innerHTML = ''
+        screen.value = ''
         input += key
 
     }
@@ -22,19 +22,19 @@ function inputOperator(key) {
 }
 
 function clearExpression() {
-    screen.innerHTML = ''
+    screen.value = ''
     input = ''
 
 }
 
 function backspace() {
-    let inputBackspaced = String(screen.innerHTML)
+    let inputBackspaced = String(screen.value)
 
     if (inputBackspaced === '') {
 
     } else {
         inputBackspaced = inputBackspaced.substring(0, inputBackspaced.length - 1)
-        screen.innerHTML = inputBackspaced
+        screen.value = inputBackspaced
         input = input.substring(0, input.length -1)
     }
 
@@ -42,9 +42,9 @@ function backspace() {
 
 function calculate() {
     if (input === ''){
-        screen.innerHTML = ''
+        screen.value = ''
     } else {
-        screen.innerHTML = eval(input)
+        screen.value = eval(input)
     }
 
     screenWatcher()
@@ -52,10 +52,10 @@ function calculate() {
 }
 
 function screenWatcher() {
-    if (screen.innerHTML.length > 10) {
+    if (screen.value.length > 10) {
         alert('Esta calculadora não suporta valores acima de 10 dígitos')
         input = ''
-        screen.innerHTML = ''
+        screen.value = ''
 
     }
     
